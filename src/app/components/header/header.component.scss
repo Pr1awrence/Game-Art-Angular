@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  background-image: url("../../../assets/images/header_background_01.jpg");
+
+}
+
+.red_line_menu {
+  width: 5px;
+  height: 50px;
+  background: red;
+  margin: 0 10px;
+
+}
+
+.header .menu ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  font-size: 26px;
+  font-family: Roboto, sans-serif;
+  color: white;
+  padding-left: 0;
+  font-weight: 400;
+}
+
+.header .menu ul li {
+  margin: 0 20px;
+
+}
+
+.header .menu ul li:last-child {
+  margin-left: -15px;
+
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    align-items: left;
+    background-image: url("../../../assets/images/header_background_02_900_214.jpg");
+
+  }
+  .logo {
+    margin: 0 auto;
+
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    flex-direction: column;
+  }
+  .header .menu ul {
+    flex-direction: column;
+    align-self: center;
+
+  }
+  .header .menu ul li {
+    font-size: 28px;
+    margin: 5px;
+
+  }
+  .header .menu ul li:last-child {
+    margin-left: 0;
+
+  }
+  .red_line_menu, #basket {
+    display: none;
+
+  }
+  .menu {
+    margin-top: -40px;
+  }
+}
+
+.header_menu {
+  cursor: pointer;
+
+}
+
+#basket {
+  background-image: url("../../../assets/images/card.png");
+  position: relative;
+  height: 62px;
+  width: 77px;
+
+}
+
+.game_counter {
+  display: block;
+  position: absolute;
+  right: 2px;
+  border-radius: 9px;
+  background-color: #e9b606;
+  color: black;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+
+}

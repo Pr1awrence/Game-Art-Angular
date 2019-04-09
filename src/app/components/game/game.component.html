@@ -1,0 +1,22 @@
+<div [ngClass]="isMainSection ? 'best_games_catalog' : 'games_catalog'">
+  <div class="game_image_block">
+    <img src="{{game.image}}" class="img_game">
+  </div>
+  <div class="games_text" *ngIf="!isMainSection">
+    <p class="games_text_headline">{{game.name}}</p>
+    <p class="price_line"></p>
+    <p *ngIf="game.oldPrice" class="games_text_old_price">
+      $ {{game.oldPrice}}
+    </p>
+    <p *ngIf="game.oldPrice" class="games_text_discount">
+      {{getDiscount(game)}}% off
+    </p>
+    <p [ngClass]="game.oldPrice ? 'games_text_price' : 'games_text_new_price'">{{game.newPrice}}</p>
+    <p class="games_text_description_no_sale"
+       [class.games_text_description]="game.oldPrice">{{game.shortDescription}}</p>
+  </div>
+  <div class="games_buttons">
+    <button class="games_button_info" onclick="">INFO</button>
+    <button class="games_button_buy" onclick="">BUY</button>
+  </div>
+</div>

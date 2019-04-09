@@ -1,0 +1,36 @@
+#best_games_section {
+  background-image: url("../../../assets/background/body_games.jpg");
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 200px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1700px) {
+  #best_games_section {
+    padding: 20px 60px;
+  }
+}
+
+.img_best_games {
+  display: block;
+  margin: 25px auto 5px;
+}
+
+.best_games_text {
+  margin: 0 auto;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.best_games_text p{
+  color: white;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-size: 33px;
+  padding-top: 23px;
+  margin: 0 15px;
+  text-shadow: 1px 1px 2px black;
+}

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  min-width: 530px;
+}
+
+body, p {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+#topics {
+  background-image: url("assets/images/header_background_01.jpg");
+}
+
+.headline {
+  font-family: "Roboto Black", sans-serif;
+  letter-spacing: 2px;
+  font-size: 50px;
+  padding: 15px;
+  text-align: center;
+  text-shadow: 2px 2px 3px black;
+  color: white;
+}
+
+.text_red {
+  color: red;
+}

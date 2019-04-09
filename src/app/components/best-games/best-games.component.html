@@ -1,0 +1,8 @@
+<section>
+  <div id="topics">
+    <h1 class="headline"><span class="text_red">BEST</span> GAMES</h1>
+  </div>
+  <div id="best_games_section">
+    <app-game *ngFor='let game of games' [(game)]="game" [isMainSection]='true'></app-game>
+  </div>
+</section>
