@@ -3,19 +3,19 @@
   <h1 class="headline"><span class="text_red">ALL</span> GAMES</h1>
   <div id="buttons_games_genre">
     <button class="buttons_genre" id="all_games_genre"
-            (click)="renderGamesByGenre()">ALL</button>
+            (click)="renderGamesByGenre(null)">ALL</button>
     <button class="buttons_genre" id="rpg_genre"
-            (click)="renderGamesByGenre('RPG')">RPG</button>
+            (click)="renderGamesByGenre(genre.RPG)">RPG</button>
     <button class="buttons_genre" id="sandbox_genre"
-            (click)="renderGamesByGenre('Sandbox')">SANDBOX</button>
+            (click)="renderGamesByGenre(genre.Sandbox)">SANDBOX</button>
     <button class="buttons_genre" id="survival_genre"
-            (click)="renderGamesByGenre('Survival')">SURVIVAL</button>
+            (click)="renderGamesByGenre(genre.Survival)">SURVIVAL</button>
     <button class="buttons_genre" id="action_adventure_genre"
-            (click)="renderGamesByGenre('Action & Adventure')">ACTION & ADVENTURE</button>
+            (click)="renderGamesByGenre(genre.Action_Adventure)">ACTION & ADVENTURE</button>
     <button class="buttons_genre" id="shooter_genre"
-            (click)="renderGamesByGenre('Shooter')">SHOOTER</button>
+            (click)="renderGamesByGenre(genre.Shooter)">SHOOTER</button>
     <button class="buttons_genre" id="role_playing_genre"
-            (click)="renderGamesByGenre('Role-playing')">ROLE-PLAYING</button>
+            (click)="renderGamesByGenre(genre.Role_playing)">ROLE-PLAYING</button>
   </div>
 </section>
   <main>

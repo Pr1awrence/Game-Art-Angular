@@ -1,12 +1,15 @@
 #container {
-  width: 1170px;
+  display: block;
+  max-width: 1170px;
   height: auto;
   min-width: 500px;
-  min-height: 500px;
+  min-height: 300px;
   margin: 0 auto;
+  padding: 10px;
 }
 
 #container img {
+  width: 100%;
   height: auto;
   border-radius: 15px;
   margin: 50px auto;

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Game } from '../../game';
+import { ModalDirective } from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-game',
@@ -7,6 +8,7 @@ import { Game } from '../../game';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  @ViewChild(ModalDirective) modal: ModalDirective;
   @Input() game: Game;
   @Input() isMainSection: boolean;
   constructor() { }

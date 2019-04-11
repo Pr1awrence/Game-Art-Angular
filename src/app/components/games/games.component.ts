@@ -9,7 +9,7 @@ import {Genre} from '../../genre';
   styleUrls: ['./games.component.scss']
 })
 export class GamesComponent implements OnInit {
-
+  genre = Genre;
   games: Game[];
   filteredGames: Game[];
   constructor(private gameService: GameProviderService) { }
@@ -17,10 +17,13 @@ export class GamesComponent implements OnInit {
     this.games = this.gameService.getGames();
     this.filteredGames = this.games;
   }
-  renderGamesByGenre(genre: string): void {
-    this.filteredGames = this.games;
-    //Trouble with enum
-    //this.filteredGames = this.games.filter(game => game.genre.filter(g => g.toString() === genre));
+  renderGamesByGenre(genre: Genre): void {
+    if (genre) {
+      this.filteredGames = this.games.filter(
+        game => game.genre.filter( g => g === genre).length > 0);
+    } else {
+      this.filteredGames = this.games;
+    }
   }
 
   ngOnInit() {

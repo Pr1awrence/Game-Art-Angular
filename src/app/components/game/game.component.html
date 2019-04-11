@@ -6,17 +6,50 @@
     <p class="games_text_headline">{{game.name}}</p>
     <p class="price_line"></p>
     <p *ngIf="game.oldPrice" class="games_text_old_price">
-      $ {{game.oldPrice}}
+      ${{game.oldPrice}}
     </p>
     <p *ngIf="game.oldPrice" class="games_text_discount">
       {{getDiscount(game)}}% off
     </p>
-    <p [ngClass]="game.oldPrice ? 'games_text_price' : 'games_text_new_price'">{{game.newPrice}}</p>
+    <p [ngClass]="game.oldPrice ? 'games_text_price' : 'games_text_new_price'">${{game.newPrice}}</p>
     <p class="games_text_description_no_sale"
        [class.games_text_description]="game.oldPrice">{{game.shortDescription}}</p>
   </div>
   <div class="games_buttons">
-    <button class="games_button_info" onclick="">INFO</button>
-    <button class="games_button_buy" onclick="">BUY</button>
+    <button class="games_button_info" (click)="frame.show()">INFO</button>
+    <button class="games_button_buy" (click)="frame.show()">BUY</button>
+  </div>
+</div>
+
+<!--Modal Window-->
+<div mdbModal
+     #frame="mdbModal"
+     class="modal fade top"
+     id="frameModalTop"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     style="overflow-y: auto">
+  <div class="modal_window_game_info">
+  <div class="img_game_modal_window_block">
+    <img src={{game.image}} class="img_game_modal_window">
+  </div>
+  <div class="game_modal_window_text">
+    <h2 class="headline_modal_window_game_info">{{game.name}}</h2>
+    <p class="modal_games_text_description">{{game.longDescription}}</p>
+    <div class="game_modal_window_price_block">
+      <p *ngIf="game.oldPrice"
+         class="games_text_old_price">${{game.oldPrice}}</p>
+      <p *ngIf="game.oldPrice"
+         class="modal_window_games_text_discount">{{getDiscount(game)}}% off</p>
+      <p [ngClass]="game.oldPrice ? 'games_text_price' : 'games_text_new_price'">${{game.newPrice}}</p>
+    </div>
+  <div class="game_buttons_modal_window">
+    <button class="games_button_buy_now">BUY NOW</button>
+    <button class="games_button_add_card">ADD TO CARD</button>
+  </div>
+  </div>
+    <button class="close_modal_window_game_info" (click)="frame.hide()"></button>
   </div>
 </div>
