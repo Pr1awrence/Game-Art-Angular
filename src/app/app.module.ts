@@ -12,7 +12,15 @@ import { CardComponent } from './components/card/card.component';
 import { MainComponent } from './components/main/main.component';
 import { BestGamesComponent } from './components/best-games/best-games.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { GameComponent } from './components/game/game.component';
+import { GameBlockComponent } from './components/game-block/game-block.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { GameModalWindowComponent } from './components/game-modal-window/game-modal-window.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalWindowEntryComponent } from './components/modal-window-entry/modal-window-entry.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,13 +33,22 @@ import { GameComponent } from './components/game/game.component';
     MainComponent,
     BestGamesComponent,
     FooterComponent,
-    GameComponent
+    GameBlockComponent,
+    FeedbackFormComponent,
+    GameModalWindowComponent,
+    ModalWindowEntryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    HttpClientModule
   ],
+  entryComponents: [GameModalWindowComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

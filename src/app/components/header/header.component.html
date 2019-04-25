@@ -7,15 +7,14 @@
       <ul>
         <li class="header_menu" routerLink="/main">MAIN</li>
         <li class="red_line_menu"></li>
-        <li class="header_menu" routerLink="/games">GAMES</li>
+        <li class="header_menu" routerLink="/all-games">GAMES</li>
         <li class="red_line_menu"></li>
         <li class="header_menu" routerLink="/faq">F.A.Q</li>
         <li class="red_line_menu"></li>
-        <li id="basket" routerLink="/card"></li>
-        <li class="header_menu" routerLink="/card">
-          <span class="order_counter"></span>
-          CARD
+        <li id="basket" routerLink="/card">
+          <div *ngIf="orderService.counter" class="game_counter">{{orderService.counter}}</div>
         </li>
+        <li class="header_menu" routerLink="/card">CARD</li>
       </ul>
     </nav>
   </div>

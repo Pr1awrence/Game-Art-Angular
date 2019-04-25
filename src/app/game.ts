@@ -9,4 +9,5 @@ export class Game {
   newPrice: number;
   oldPrice: number;
   bestGame: boolean;
+  id: number;
 }

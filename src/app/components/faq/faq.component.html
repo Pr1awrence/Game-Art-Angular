@@ -4,7 +4,7 @@
     <div id="form_for_search">
       <input #search type="text" class="place_for_search" id="search_input" value="" placeholder="Enter text..." autofocus>
 
-      <button id="button_for_turn_back" value=" " title="Cancel search" (click)="turnBack()">
+      <button id="button_for_turn_back" value=" " type="reset" title="Cancel search" (click)="turnBack()">
         <img id="img_close" src="../../../assets/images/close.png">
       </button>
 
@@ -21,4 +21,7 @@
       </div>
     </div>
   </section>
+
+  <app-feedback-form></app-feedback-form>
+
 </div>

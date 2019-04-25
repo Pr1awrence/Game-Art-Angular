@@ -1,13 +1,32 @@
-import { Injectable } from '@angular/core';
-import { QuestionAndAnswer } from '../question-and-answer';
-import { QUESTIONS_ANSWERS } from '../mock-questions-and-answers';
+import {Injectable} from '@angular/core';
+import {QuestionAndAnswer} from '../question-and-answer';
+import {Observable, of} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionsAndAnswersProviderService {
-  getQuestionsAndAnswers(): QuestionAndAnswer[] {
-    return QUESTIONS_ANSWERS;
+  questionsAndAnswersUrl = '../../assets/database/questions-and-answers.json';
+
+  getQuestionsAndAnswers(): Observable<QuestionAndAnswer[]> {
+    return this.http.get<QuestionAndAnswer[]>(this.questionsAndAnswersUrl)
+      .pipe(
+        catchError(this.handleError<QuestionAndAnswer[]>('getQuestionAndAnswer', null))
+      );
   }
-  constructor() { }
+
+  constructor(
+    private http: HttpClient) {
+  }
+
+  //Handle Http operation that failed.
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error + error.message);
+      //return empty result
+      return of(result as T);
+    };
+  }
 }

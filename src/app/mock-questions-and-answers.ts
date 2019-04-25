@@ -1,7 +1,7 @@
 import {QuestionAndAnswer} from './question-and-answer';
 
 export const QUESTIONS_ANSWERS: QuestionAndAnswer[] = [
-  {
+  /*{
     question: 'How to buy a name at a discount?',
     answer: 'All current discounts are listed on the main site. If you want to buy the name at a discount, ' +
     'add the desired name to the basket and pay for it.'
@@ -41,5 +41,5 @@ export const QUESTIONS_ANSWERS: QuestionAndAnswer[] = [
   {
     question: 'I paid for the purchase, but the name is not yet available',
     answer: 'Write to us in support of your order number and the time of the transaction.'
-  }
+  }*/
 ];

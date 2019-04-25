@@ -16,8 +16,10 @@ export class FaqComponent implements OnInit {
   }
 
   getQuestionsAndAnswers(): void {
-    this.questionsAnswers = this.questionsAnswersService.getQuestionsAndAnswers();
-    this.filteredQuestionsAnswers = this.questionsAnswers;
+    this.questionsAnswersService.getQuestionsAndAnswers().subscribe(answer => {
+      this.questionsAnswers = answer;
+      this.filteredQuestionsAnswers = this.questionsAnswers;
+    });
   }
 
   ngOnInit() {
@@ -27,12 +29,12 @@ export class FaqComponent implements OnInit {
   faqSearch(search: string): void {
     const regex = new RegExp('\\b' + search, 'i');
     this.filteredQuestionsAnswers = this.filteredQuestionsAnswers.filter(el => {
-        return el.question.match(regex) !== null || el.answer.match(regex) !== null;
-      });
+      return el.question.match(regex) !== null || el.answer.match(regex) !== null;
+    });
   }
 
   turnBack(): void {
-    document.getElementById('search_input').value = '';
+    (<HTMLInputElement>document.getElementById('search_input')).value = '';
     this.filteredQuestionsAnswers = this.questionsAnswers;
   }
 

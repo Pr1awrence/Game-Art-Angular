@@ -1,3 +1,5 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 html, body {
   min-width: 530px;
 }
@@ -26,4 +28,52 @@ h1 {
 
 .text_red {
   color: red;
+}
+
+.mat-dialog-container {
+  padding: 15px 10px !important;
+}
+
+/*Styles for games - on main, on games, on modal, on card*/
+.games_text_old_price {
+  display: inline-block;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 27px;
+  color: #807f80;
+  text-decoration: line-through;
+  margin-top: 3px;
+}
+
+.games_text_price {
+  display: block;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 27px;
+  margin: 5px 0 10px 0;
+}
+
+.games_text_discount {
+  display: inline-block;
+  margin-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 27px;
+  color: #c99d11;
+}
+
+.games_text_description {
+  display: block;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  color: #807f80;
+}
+
+.games_text_new_price {
+  margin: 25px 0 25px 0;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 28px;
+}
+
+.games_text_description_no_sale {
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  color: #807f80;
 }

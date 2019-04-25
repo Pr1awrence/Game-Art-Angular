@@ -1,0 +1,235 @@
+div#card_body {
+  background-image: url("../../../assets/background/body_games.jpg");
+  padding-bottom: 10px;
+  position: relative;
+  min-height: 750px;
+}
+
+#card_block, #order_block {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.9;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-width: 500px;
+  padding: 0 100px 0 100px;
+}
+
+.headline_left {
+  font-family: "Roboto Black", sans-serif;
+  font-size: 50px;
+  padding: 25px 0 20px 0;
+  text-align: left;
+  color: #3b393e;
+}
+
+.order_inform_block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.order_inform {
+  font-size: 20px;
+  font-family: "Roboto Medium", sans-serif;
+  font-weight: 600;
+  color: rgb(44, 45, 55);
+  line-height: 1.2;
+  padding-right: 18px;
+  text-decoration: none;
+}
+
+.text_price_left {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Roboto Medium", sans-serif;
+  color: rgb(44, 45, 55);
+  line-height: 1.2;
+  padding-top: 10px;
+}
+
+#order_block:last-child {
+  padding-bottom: 20px;
+}
+
+.order_game_info{
+  display: flex;
+  padding-top: 10px;
+}
+
+.order_game_image_block {
+  max-width: 90%;
+  min-width: 250px;
+}
+
+.img_order_game{
+  max-width: 90%;
+  height: auto;
+}
+
+.order_game_text{
+  max-width: 600px;
+  min-width: 400px;
+}
+
+.game_modal_window_price_block{
+  position: relative;
+  margin-left: 20px;
+  max-width: 600px;
+  min-width: 200px;
+}
+
+.order_text_discount{
+  display: inline-block;
+  margin-left: 15px;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 27px;
+  color: red;
+}
+
+.order_headline_game_info{
+  font-size: 22px;
+  font-family: "Roboto Medium", sans-serif;
+  margin: 0 0 15px 0;
+}
+
+.order_game_text_description{
+  font-family: "Roboto", sans-serif;
+  margin: 10px 20px 20px 0;
+}
+
+.games_button_delete{
+  position: absolute;
+  float: right;
+  bottom: 50px;
+  display: inline-block;
+  margin: 8px;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 18px;
+  color: black;
+  background-color: transparent;
+  padding: 7px 30px;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.games_button_delete:hover {
+  border: 2px solid gray;
+  color: gray;
+}
+
+#order_status {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.9;
+  margin: 0 auto 30px auto;
+  max-width: 1000px;
+  min-width: 500px;
+  padding: 0 100px 20px 100px;
+}
+
+#order_info{
+  text-align: right;
+  margin-right: 30px;
+}
+
+.order_total_headline, #order_total_price {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Roboto Black", sans-serif;
+  font-size: 21px;
+  color: #3b393e;
+}
+
+.order_total_headline {
+  margin-right: 50px;
+}
+
+@media screen and (max-width: 990px) {
+  div.order_checkout {
+    text-align: center;
+  }
+  button#button_order_checkout {
+    font-size: 35px;
+    margin: 15px;
+  }
+  .order_game_info {
+    flex-flow: wrap;
+  }
+  .order_game_image_block {
+    max-width: 30%;
+    order: 0;
+  }
+  .game_modal_window_price_block {
+    order: 1;
+  }
+  .order_game_text {
+    order: 2;
+    max-width: initial;
+    font-size: 22px;
+  }
+  .games_text_old_price, .modal_window_games_text_discount, .games_text_price, .order_headline_game_info {
+    font-size: 40px;
+  }
+  .games_button_delete {
+    position: initial;
+    float: initial;
+    margin: 5px 0 15px 0;
+    font-size: 27px;
+  }
+  .modal_window_games_text_discount{
+    display: block;
+    margin-left: 0;
+  }
+  .order_total_headline, #order_total_price {
+    display: block;
+    font-size: 15px;
+  }
+  #order_info{
+    text-align: left;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #order_info {
+    text-align: left;
+    margin: 0;
+    font-size: 38px;
+  }
+  .order_total_headline {
+    margin-right: 10px;
+  }
+  .games_text_old_price, .modal_window_games_text_discount, .games_text_price {
+    font-size: 45px;
+  }
+}
+
+.order_footnote {
+  font-family: "Roboto", sans-serif;;
+  color: rgb(44, 45, 55);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.order_checkout {
+  text-align: right;
+}
+
+#button_order_checkout {
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 18px;
+  color: white;
+  background-color: #2c2d37;
+  padding: 7px 30px;
+  outline: none;
+  border: 2px solid #2c2d37;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+#button_order_checkout:hover {
+  background-color: #44556f;
+}

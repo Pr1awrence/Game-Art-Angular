@@ -1,0 +1,59 @@
+<section>
+  <h1 class="headline"><span class="text_red">WRITE</span> US</h1>
+
+  <div id="message_sent" style="display: none"></div>
+  <div id="feedback_form" *ngIf="!submit">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <label>
+        <span class="feedback_form_text">*Name:</span>
+      <span class="error_message"
+            *ngIf="feedbackForm.hasError('required', 'name') && feedbackForm.controls.name.touched">
+        Name can't be empty
+      </span>
+        <span class="error_message"
+              *ngIf="feedbackForm.hasError('pattern', 'name') && feedbackForm.controls.name.value !== ''
+              && feedbackForm.controls.name.touched">
+          Name must be greater than 1 digit and not have characters  /: *? "<> |
+      </span>
+      <input formControlName="name" type="text" class="feedback_user_data" name="name" autofocus>
+      </label>
+
+      <label>
+        <span class="feedback_form_text">*Email:</span>
+      <span class="error_message"
+            *ngIf="feedbackForm.hasError('required', 'email') && feedbackForm.controls.email.touched">
+        Email can't be empty
+      </span>
+        <span class="error_message"
+              *ngIf="feedbackForm.hasError('pattern', 'email') && feedbackForm.controls.email.value !== ''
+              && feedbackForm.controls.email.touched">
+        You entered a wrong email
+      </span>
+      <input formControlName="email" type="text" class="feedback_user_data" name="email" autofocus>
+      </label>
+
+      <label>
+        <span class="feedback_form_text">Subject</span>
+      <input formControlName="subject" type="text" class="feedback_user_data" autofocus>
+      </label>
+
+      <label>
+        <span class="feedback_form_text">*Your message:</span>
+      <span class="error_message"
+            *ngIf="feedbackForm.hasError('required', 'message') && feedbackForm.controls.message.touched">
+        Message can't be empty
+      </span>
+      <textarea formControlName="message" class="feedback_user_message" tabindex="4" name="msg" autofocus></textarea>
+      </label>
+
+      <button id="feedback_button" type="submit" [disabled]="!feedbackForm.valid">
+        <span id="feedback_button_text">SEND</span>
+      </button>
+    </form>
+  </div>
+  <div *ngIf="submit" class="feedback_form_success">
+    <img src="../../../assets/images/successful_message.png" class="feedback_success_image">
+    <h1>Your message has been sent successfully!</h1>
+    <h2>Expect a response from the support service to the email you specified.</h2>
+  </div>
+</section>
