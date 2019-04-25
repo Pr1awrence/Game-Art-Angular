@@ -8,7 +8,7 @@ import { Game } from '../../game';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  orderedGames: Set<Game>;
+  orderedGames: Map<number, Game>;
   amount: number;
   constructor(private orderService: OrderService) {
     this.orderedGames = this.orderService.getOrderedGames();
@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
     return Math.floor((game.oldPrice - game.newPrice) * 100 / game.oldPrice);
   }
   deleteGameFromOrder(game: Game): void {
-    this.orderedGames = this.orderService.deleteGameFromOrder(game);
+    this.orderedGames = this.orderService.deleteGameFromOrder(game.id);
     this.amount = this.orderService.currentAmount();
   }
 

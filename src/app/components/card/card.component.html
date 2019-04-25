@@ -16,20 +16,20 @@
     </div>
 
     <div *ngIf="orderedGames.size !== 0">
-      <div id="order_block" *ngFor="let game of orderedGames">
+      <div id="order_block" *ngFor="let game of orderedGames | keyvalue">
         <div class="order_game_info">
           <div class="order_game_image_block">
-            <img class="img_order_game" src="{{game.image}}">
+            <img class="img_order_game" src="{{game.value.image}}">
           </div>
           <div class="order_game_text">
-            <h2 class="order_headline_game_info">{{game.name}}</h2>
-            <p class="order_game_text_description">{{game.longDescription}}</p>
+            <h2 class="order_headline_game_info">{{game.value.name}}</h2>
+            <p class="order_game_text_description">{{game.value.longDescription}}</p>
           </div>
           <div class="game_modal_window_price_block">
-            <p *ngIf="game.oldPrice" class="games_text_old_price">${{game.oldPrice}}</p>
-            <p *ngIf="game.oldPrice" class="order_text_discount">{{getDiscount(game)}}% off</p>
-            <p [ngClass]="game.oldPrice ? 'games_text_price' : 'games_text_new_price'">${{game.newPrice}}</p>
-            <button class="games_button_delete" (click)="deleteGameFromOrder(game)">DELETE</button>
+            <p *ngIf="game.value.oldPrice" class="games_text_old_price">${{game.value.oldPrice}}</p>
+            <p *ngIf="game.value.oldPrice" class="order_text_discount">{{getDiscount(game.value)}}% off</p>
+            <p [ngClass]="game.value.oldPrice ? 'games_text_price' : 'games_text_new_price'">${{game.value.newPrice}}</p>
+            <button class="games_button_delete" (click)="deleteGameFromOrder(game.value)">DELETE</button>
           </div>
         </div>
         <img class="line_question" src="../../../assets/faq/line_question.png">

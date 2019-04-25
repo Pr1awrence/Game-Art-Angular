@@ -8,26 +8,28 @@ export class OrderService {
   public counter: number = 0;
   constructor() {}
 
-  private orderedGames = new Set<Game>();
+  private orderedGames = new Map<number, Game>();
   public orderPrice: number = 0;
 
   addToCard(game: Game): void {
-    this.orderedGames.add(game);
+    this.orderedGames.set(game.id, game);
     this.counter = this.orderedGames.size;
     this.priceCalculation();
   }
-  deleteGameFromOrder(game: Game): Set<Game> {
-    this.orderedGames.delete(game);
+  deleteGameFromOrder(key: number): Map<number, Game> {
+    this.orderedGames.delete(key);
     this.counter = this.orderedGames.size;
     this.priceCalculation();
     return this.orderedGames;
   }
-  getOrderedGames(): Set<Game> {
+  getOrderedGames(): Map<number, Game> {
     return this.orderedGames;
   }
   priceCalculation(): number {
     this.orderPrice = 0;
-    this.orderedGames.forEach(game => this.orderPrice += game.newPrice);
+    for (game of this.orderedGames.values()) {
+      this.orderPrice += game.newPrice;
+    }
     return Math.ceil(this.orderPrice * 100) / 100;
   }
   currentAmount(): number {
