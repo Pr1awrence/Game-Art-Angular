@@ -2,14 +2,30 @@
 
 html, body {
   min-width: 530px;
+  line-height: inherit !important;
 }
 
 body, p {
   margin: 0;
+  font-weight: 400 !important;
+  line-height: inherit !important;
 }
 
-h1 {
+*, ::after, ::before {
+  box-sizing: inherit !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
   margin: 0;
+  line-height: inherit !important;
+}
+
+.menu>ul{
+  margin: 20px 0 !important;
+}
+
+label {
+  display: block !important;
 }
 
 #topics {

@@ -27,7 +27,7 @@ export class OrderService {
   }
   priceCalculation(): number {
     this.orderPrice = 0;
-    for (game of this.orderedGames.values()) {
+    for (const game of this.orderedGames.values()) {
       this.orderPrice += game.newPrice;
     }
     return Math.ceil(this.orderPrice * 100) / 100;
