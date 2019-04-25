@@ -7,7 +7,7 @@ import { OrderService } from '../../services/order.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private orderService: OrderService) {
+  constructor(public orderService: OrderService) {
     this.orderService = orderService;
   }
 
