@@ -147,3 +147,27 @@
   top: 5px;
   right: 5px;
 }
+
+@media screen and (max-width: 850px) {
+
+  .modal_window_game_info{
+    display: block;
+    position: relative;
+  }
+  .close_modal_window_game_info{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .game_modal_window_text{
+    width: auto;
+    text-align: center;
+    font-size: larger;
+  }
+  .img_game_modal_window_block {
+    max-width: 60%;
+  }
+  .img_game_modal_window {
+    max-width: 100%;
+  }
+}

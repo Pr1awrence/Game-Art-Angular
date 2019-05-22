@@ -14,3 +14,8 @@
   border-radius: 15px;
   margin: 50px auto;
 }
+
+/*this class for first slide, because the library does not have this style in the first element*/
+#first-slide {
+  display: block !important;
+}

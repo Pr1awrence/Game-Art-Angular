@@ -1,29 +1,29 @@
-<div id="card_body">
+<div id="card-body">
   <section>
-    <div id="card_block">
+    <div id="card-block">
       <h1 class="headline_left">ORDER</h1>
       <nav>
-        <ul class="order_inform_block">
-          <li class="order_inform">Backet</li>
-          <li class="order_inform">Billing information</li>
-          <li class="order_inform">Check order</li>
-          <li class="order_inform">Order is processed</li>
+        <ul class="order-info-items">
+          <li class="order-info__item">Backet</li>
+          <li class="order-info__item">Billing information</li>
+          <li class="order-info__item">Check order</li>
+          <li class="order-info__item">Order is processed</li>
         </ul>
-        <img class="line_question" src="../../../assets/faq/line_question.png">
-        <p class="text_price_left">Price including VAT</p>
-        <img class="line_question" src="../../../assets/faq/line_question.png">
+        <img class="line-question" src="../../../assets/faq/line_question.png">
+        <p class="text-price_left">Price including VAT</p>
+        <img class="line-question" src="../../../assets/faq/line_question.png">
       </nav>
     </div>
 
     <div *ngIf="orderedGames.size !== 0">
-      <div id="order_block" *ngFor="let game of orderedGames | keyvalue">
-        <div class="order_game_info">
-          <div class="order_game_image_block">
-            <img class="img_order_game" src="{{game.value.image}}">
+      <div id="order-block" *ngFor="let game of orderedGames | keyvalue">
+        <div class="order-game-info">
+          <div class="order-game-info__img-block">
+            <img class="order-game-info__img" src="{{game.value.image}}">
           </div>
-          <div class="order_game_text">
-            <h2 class="order_headline_game_info">{{game.value.name}}</h2>
-            <p class="order_game_text_description">{{game.value.longDescription}}</p>
+          <div class="order-game-info__text-block">
+            <h2 class="order-game-info__game-headline">{{game.value.name}}</h2>
+            <p class="order-game-info__game-description">{{game.value.longDescription}}</p>
           </div>
           <div class="game_modal_window_price_block">
             <p *ngIf="game.value.oldPrice" class="games_text_old_price">${{game.value.oldPrice}}</p>
@@ -32,22 +32,22 @@
             <button class="games_button_delete" (click)="deleteGameFromOrder(game.value)">DELETE</button>
           </div>
         </div>
-        <img class="line_question" src="../../../assets/faq/line_question.png">
+        <img class="line-question" src="../../../assets/faq/line_question.png">
       </div>
     </div>
 
-    <div id="order_status">
-      <div id="order_info">
-        <p class="order_total_headline">Total interim amount, including vat</p>
-        <p id="order_total_price">${{amount}}</p>
+    <div id="order-status">
+      <div id="order-info">
+        <p class="order-info__total-headline">Total interim amount, including vat</p>
+        <p id="order-info__total-price">${{amount}}</p>
       </div>
-      <p class="order_footnote">Prices and special offers for products included in the cart may change if they are not
+      <p class="order-status__footnote">Prices and special offers for products included in the cart may change if they are not
         placed an order.<br>
         Possible payment methods: We offer standard payment methods for international payments. Additional
         information on specific payment methods available
         to you will be provided during the order process.</p>
-      <div class="order_checkout">
-        <button *ngIf="orderedGames.size !== 0" id="button_order_checkout">CONTINUE</button>
+      <div class="order-checkout">
+        <button class="order-checkout__btn" *ngIf="orderedGames.size !== 0">CONTINUE</button>
       </div>
     </div>
   </section>

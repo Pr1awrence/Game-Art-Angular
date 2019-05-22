@@ -16,7 +16,7 @@
        [class.games_text_description]="game.oldPrice">{{game.shortDescription}}</p>
   </div>
   <div class="games_buttons">
-    <button class="games_button_info" routerLink="game/{{game.id}}">INFO</button>
+    <button class="games_button_info" routerLink="games/{{game.id}}">INFO</button>
     <button class="games_button_buy" routerLink="/card" (click)="addToOrder(game)">BUY</button>
   </div>
 </div>

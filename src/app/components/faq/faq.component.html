@@ -1,23 +1,27 @@
-<div id="faq_body">
+<div id="faq-body">
   <section>
     <h1 class="headline">F.A.Q</h1>
-    <div id="form_for_search">
-      <input #search type="text" class="place_for_search" id="search_input" value="" placeholder="Enter text..." autofocus>
 
-      <button id="button_for_turn_back" value=" " type="reset" title="Cancel search" (click)="turnBack()">
-        <img id="img_close" src="../../../assets/images/close.png">
+    <form class="search-form">
+      <div class="search-form__input-container">
+        <input class="search-form__input" #search type="text" value="" placeholder="Enter text..." autofocus>
+        <button class="search-form__btn-turn-back" value=" " type="reset" title="Cancel search" (click)="turnBack()">
+          <img class="search-form__img-close" src="../../../assets/images/close.png">
+        </button>
+      </div>
+      <button class="search-form__btn-search" type="submit" value=" " title="Search" (click)="faqSearch(search.value)">
+        <span class="search-form__btn-search-items">
+          <img class="search-form__btn-search-img" src="../../../assets/faq/search.png">Search
+        </span>
       </button>
+    </form>
 
-      <button id="button_search" type="submit" value=" " title="Search" (click)="faqSearch(search.value)">
-        <span id="button_search_items"><img id="img_search" src="../../../assets/faq/search.png">Search</span>
-      </button>
-    </div>
-    <div id="faq_questions" class="faq_questions_block">
-      <img class="line_question" src="../../../assets/faq/line_question.png">
-      <div *ngFor="let questAnsw of filteredQuestionsAnswers" class="faq_questions_answers">
-        <h2 class="faq_questions_text">{{questAnsw.question}}</h2>
-        <p class="answer_block">{{questAnsw.answer}}</p>
-        <img class="line_question" src="../../../assets/faq/line_question.png">
+    <div id="faq-questions" class="faq-questions-block">
+      <img class="line-question" src="../../../assets/faq/line_question.png">
+      <div class="faq-questions-block__quest-and-answers" *ngFor="let questAnsw of filteredQuestionsAnswers">
+        <h2 class="faq-questions-block__question">{{questAnsw.question}}</h2>
+        <p class="faq-questions-block__answer">{{questAnsw.answer}}</p>
+        <img class="line-question" src="../../../assets/faq/line_question.png">
       </div>
     </div>
   </section>

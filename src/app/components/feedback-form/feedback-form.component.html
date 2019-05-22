@@ -37,14 +37,12 @@
       <input formControlName="subject" type="text" class="feedback_user_data" autofocus>
       </label>
 
-      <label>
         <span class="feedback_form_text">*Your message:</span>
       <span class="error_message"
             *ngIf="feedbackForm.hasError('required', 'message') && feedbackForm.controls.message.touched">
         Message can't be empty
       </span>
       <textarea formControlName="message" class="feedback_user_message" tabindex="4" name="msg" autofocus></textarea>
-      </label>
 
       <button id="feedback_button" type="submit" [disabled]="!feedbackForm.valid">
         <span id="feedback_button_text">SEND</span>

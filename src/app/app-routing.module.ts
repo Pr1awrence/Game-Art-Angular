@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent,
     children: [
       {
-        path: 'game/:id',
+        path: 'games/:id',
         component: ModalWindowEntryComponent
       }
     ]
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'all-games', component: GamesComponent,
     children: [
       {
-        path: 'game/:id',
+        path: 'games/:id',
         component: ModalWindowEntryComponent
       }
     ]},

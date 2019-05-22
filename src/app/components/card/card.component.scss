@@ -1,11 +1,15 @@
-div#card_body {
+div#card-body {
   background-image: url("../../../assets/background/body_games.jpg");
   padding-bottom: 10px;
   position: relative;
   min-height: 750px;
 }
 
-#card_block, #order_block {
+.line-question {
+  width: 100%;
+}
+
+#card-block, #order-block {
   background-color: rgb(255, 255, 255);
   opacity: 0.9;
   margin: 0 auto;
@@ -22,14 +26,14 @@ div#card_body {
   color: #3b393e;
 }
 
-.order_inform_block {
+.order-info-items {
   margin: 0;
   padding: 0;
   display: flex;
   list-style: none;
 }
 
-.order_inform {
+.order-info__item {
   font-size: 20px;
   font-family: "Roboto Medium", sans-serif;
   font-weight: 600;
@@ -39,7 +43,7 @@ div#card_body {
   text-decoration: none;
 }
 
-.text_price_left {
+.text-price_left {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
@@ -49,26 +53,26 @@ div#card_body {
   padding-top: 10px;
 }
 
-#order_block:last-child {
+#order-block:last-child {
   padding-bottom: 20px;
 }
 
-.order_game_info{
+.order-game-info{
   display: flex;
   padding-top: 10px;
 }
 
-.order_game_image_block {
+.order-game-info__img-block {
   max-width: 90%;
   min-width: 250px;
 }
 
-.img_order_game{
+.order-game-info__img{
   max-width: 90%;
   height: auto;
 }
 
-.order_game_text{
+.order-game-info__text-block{
   max-width: 600px;
   min-width: 400px;
 }
@@ -88,13 +92,13 @@ div#card_body {
   color: red;
 }
 
-.order_headline_game_info{
+.order-game-info__game-headline{
   font-size: 22px;
   font-family: "Roboto Medium", sans-serif;
   margin: 0 0 15px 0;
 }
 
-.order_game_text_description{
+.order-game-info__game-description{
   font-family: "Roboto", sans-serif;
   margin: 10px 20px 20px 0;
 }
@@ -121,7 +125,7 @@ div#card_body {
   color: gray;
 }
 
-#order_status {
+#order-status {
   background-color: rgb(255, 255, 255);
   opacity: 0.9;
   margin: 0 auto 30px auto;
@@ -130,12 +134,12 @@ div#card_body {
   padding: 0 100px 20px 100px;
 }
 
-#order_info{
+#order-info{
   text-align: right;
   margin-right: 30px;
 }
 
-.order_total_headline, #order_total_price {
+.order-info__total-headline, #order-info__total-price {
   display: inline-block;
   text-transform: uppercase;
   font-family: "Roboto Black", sans-serif;
@@ -143,34 +147,34 @@ div#card_body {
   color: #3b393e;
 }
 
-.order_total_headline {
+.order-info__total-headline {
   margin-right: 50px;
 }
 
 @media screen and (max-width: 990px) {
-  div.order_checkout {
+  div.order-checkout {
     text-align: center;
   }
-  button#button_order_checkout {
+  button.order-checkout__btn {
     font-size: 35px;
     margin: 15px;
   }
-  .order_game_info {
+  .order-game-info {
     flex-flow: wrap;
   }
-  .order_game_image_block {
+  .order-game-info__img-block {
     max-width: 30%;
     order: 0;
   }
   .game_modal_window_price_block {
     order: 1;
   }
-  .order_game_text {
+  .order-game-info__text-block {
     order: 2;
     max-width: initial;
     font-size: 22px;
   }
-  .games_text_old_price, .modal_window_games_text_discount, .games_text_price, .order_headline_game_info {
+  .games_text_old_price, .order_text_discount, .games_text_price, .order-game-info__game-headline {
     font-size: 40px;
   }
   .games_button_delete {
@@ -179,46 +183,46 @@ div#card_body {
     margin: 5px 0 15px 0;
     font-size: 27px;
   }
-  .modal_window_games_text_discount{
+  .order_text_discount{
     display: block;
     margin-left: 0;
   }
-  .order_total_headline, #order_total_price {
+  .order-info__total-headline, #order-info__total-price {
     display: block;
     font-size: 15px;
   }
-  #order_info{
+  #order-info{
     text-align: left;
     margin-right: 0;
   }
 }
 
 @media screen and (max-width: 750px) {
-  #order_info {
+  #order-info {
     text-align: left;
     margin: 0;
     font-size: 38px;
   }
-  .order_total_headline {
+  .order-info__total-headline {
     margin-right: 10px;
   }
-  .games_text_old_price, .modal_window_games_text_discount, .games_text_price {
+  .games_text_old_price, .order_text_discount, .games_text_price {
     font-size: 45px;
   }
 }
 
-.order_footnote {
+.order-status__footnote {
   font-family: "Roboto", sans-serif;;
   color: rgb(44, 45, 55);
   line-height: 1.2;
   margin: 20px 0;
 }
 
-.order_checkout {
+.order-checkout {
   text-align: right;
 }
 
-#button_order_checkout {
+.order-checkout__btn {
   font-family: "Roboto Medium", sans-serif;
   font-size: 18px;
   color: white;
@@ -230,6 +234,6 @@ div#card_body {
   transition: 0.2s;
 }
 
-#button_order_checkout:hover {
+.order-checkout__btn:hover {
   background-color: #44556f;
 }

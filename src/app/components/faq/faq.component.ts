@@ -34,7 +34,7 @@ export class FaqComponent implements OnInit {
   }
 
   turnBack(): void {
-    (<HTMLInputElement>document.getElementById('search_input')).value = '';
+    (<HTMLInputElement>document.getElementById('search-input')).value = '';
     this.filteredQuestionsAnswers = this.questionsAnswers;
   }
 
